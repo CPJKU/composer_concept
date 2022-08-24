@@ -1,0 +1,16 @@
+Parameters for basetrain:
+
+mode = basetrain
+model_name = resnet50
+optim = SGD
+transform = None
+epochs = 100
+save_trn = True
+lr = 0.01
+onset = False
+trn_seg = 90
+val_seg = 90
+omit = None
+composers = 13
+age = False
+train_batch = 40
