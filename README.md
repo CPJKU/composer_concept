@@ -262,23 +262,17 @@ double check that the first suggested CAV is the number 3, and open the picture 
 
 
 ## References
-[1] S. Kim, H. Lee, S. Park, J. Lee, and K. Choi, “Deep Composer Classification Using 
-Symbolic Representation,” in ISMIR Late Breaking and Demo Papers, 2020.
+[1] S. Kim, H. Lee, S. Park, J. Lee, and K. Choi, “Deep Composer Classification Using Symbolic Representation,” 
+ISMIR Late Breaking and Demo Papers, 2020.
 
-[2] B. Kim, M. Wattenberg, J. Gilmer, C. J. Cai, J. Wexler, F. B. Viégas, and R. Sayres, 
-“Interpretability Beyond Feature Attribution: Quantitative Testing with Concept 
-Activation Vectors (TCAV),” in Proceedings of the 35th International Conference on 
-Machine Learning, ICML 2018, Stockholm, Sweden, July 10-15, 2018, 
-ser. Proceedings of Machine Learning Research, vol. 80. PMLR, 2018, pp. 2673–2682.
+[2] B. Kim, M. Wattenberg, J. Gilmer, C. J. Cai, J. Wexler, F. B. Viégas, and R. Sayres, “Interpretability Beyond
+Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV),” in Proceedings of the 35th
+International Conference on Machine Learning, ICML. PMLR, 2018, pp. 2673–2682.
 
-[3] C. Hawthorne, A. Stasyuk, A. Roberts, I. Simon, C. A. Huang, S. Dieleman, E. Elsen, 
-J. H. Engel, and D. Eck, “Enabling Factorized Piano Music Modeling and Generation with 
-the MAESTRO Dataset,” in Proceedings of the 7th International Conference on Learning 
-Representations, ICLR. OpenReview.net, 2019.
+[3] C. Hawthorne, A. Stasyuk, A. Roberts, I. Simon, C. A. Huang, S. Dieleman, E. Elsen, J. H. Engel, and D. Eck,
+“Enabling Factorized Piano Music Modeling and Generation with the MAESTRO Dataset,” in Proceedings
+of the 7th International Conference on Learning Representations, ICLR, 2019.
 
-[4] R. Zhang, P. Madumal, T. Miller, K. A. Ehinger, and
-B. I. P. Rubinstein, “Invertible Concept-based Explanations for CNN Models with Non-negative Concept
-Activation Vectors,” in Proceedings of the 35th AAAI Conference on Artificial Intelligence, AAAI, 
-33rd Conference on Innovative Applications of Artificial Intelligence, IAAI, 
-The 11th Symposium on Educational Advances in Artificial Intelligence, EAAI,
-Virtual Event, February 2-9, 2021. AAAI Press, 2021, pp. 11 682–11 690.
+[4] R. Zhang, P. Madumal, T. Miller, K. A. Ehinger, and B. I. P. Rubinstein, “Invertible Concept-based Explanations 
+for CNN Models with Non-negative Concept Activation Vectors,” in Proceedings of the 35th AAAI Conference on Artificial Intelligence, 
+AAAI, 2021, pp. 11682–11690.
