@@ -151,7 +151,7 @@ defined random datasets). The results are stored to the according path.
 A more concrete example could be:
 
 ``` 
-python -m supervised.test_with_cavs classifier/meta/2202180921/model/resnet50.pt --omit-onset --layers layer4 --composer mozart --save-path classifier/experiments/mozart_17 --concepts 1 7 --random-concepts 90
+python -m supervised.test_with_cavs classifier/meta/2202180921/model/resnet50.pt --omit-onset --layers layer4 --composer mozart --save-path results/mozart_17 --concepts 1 7 --random-concepts 90
 ```
 
 This performs testing with CAVs for pieces of mozart, the penultimate layer of the defined
