@@ -260,6 +260,17 @@ python -m unsupervised.generate_uns_explanation --reducer "NTD" --dimension 4 --
 ```
 double check that the first suggested CAV is the number 3, and open the picture located at `results/layer4_r[4, 13, 3, 375][Chopin_Bach]/feature_imgs/3plotly.html`, and move the threshold cursor to 60%. The figure in the paper only contains the first 3 pieces, but there you can inspect the 5 pieces where the concept 3 is maximally activated.
 
+## Citing
+If you use this approach in any research, please cite the relevant paper:
+
+```
+@inproceedings{concept_music2022,
+  title={Concept-Based Techniques for “Musicologist-friendly” Explanations in a Deep Music Classifier},
+  author={Foscarin, Francesco and Prinz, Katharina and Praher, Verena and Flexer Arthur and Widmer Gerhard},
+  booktitle={International Society for Music Information Retrieval Conference {(ISMIR)}},
+  year={2022},
+}
+```
 
 ## References
 [1] S. Kim, H. Lee, S. Park, J. Lee, and K. Choi, “Deep Composer Classification Using Symbolic Representation,” 
