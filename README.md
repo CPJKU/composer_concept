@@ -272,6 +272,9 @@ If you use this approach in any research, please cite the relevant paper:
 }
 ```
 
+## License
+Licensed under the [MIT License](LICENSE).
+
 ## References
 [1] S. Kim, H. Lee, S. Park, J. Lee, and K. Choi, “Deep Composer Classification Using Symbolic Representation,” 
 ISMIR Late Breaking and Demo Papers, 2020.
