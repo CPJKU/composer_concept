@@ -1,8 +1,6 @@
 """ Adapted from original repo (https://github.com/KimSSung/Deep-Composer-Classification/blob/master/generator.py) """
-# (partitura is used in this version)
+# (partitura is used in this version instead of music21)
 
-from music21 import instrument, note
-from music21 import chord
 import numpy as np
 from tqdm import tqdm
 import os
@@ -102,7 +100,7 @@ class Generator:
         # save mapped list
         self.name_id_map.to_csv(
             os.path.join(input_path, "name_id_map.csv"), sep=","
-        )  # TODO: enable (VP: ??)
+        ) 
         return
 
     def get_data_list(self, fdir):  # return preprocessed list of paths
@@ -145,27 +143,6 @@ class Generator:
         pr3d = np.transpose(pr3d, (0, 2, 1))
 
         return pr3d
-
-    def extract_notes(self, track):
-        offset_list = track.secondsMap
-        on, off, dur, pitch, vel = [], [], [], [], []
-        for evt in offset_list:
-            element = evt["element"]
-            if type(element) is note.Note:
-                on.append(evt["offsetSeconds"])
-                off.append(evt["endTimeSeconds"])
-                dur.append(evt["durationSeconds"])
-                pitch.append(element.pitch.ps)
-                vel.append(element.volume.velocity)
-            elif type(element) is chord.Chord:
-                for nt in element.notes:
-                    on.append(evt["offsetSeconds"])
-                    off.append(evt["endTimeSeconds"])
-                    dur.append(evt["durationSeconds"])
-                    pitch.append(nt.pitch.ps)
-                    vel.append(nt.volume.velocity)
-
-        return on, off, dur, pitch, vel
 
     def fetch_version(self, track):
         track = track.lower()  # case-insensitive comparison

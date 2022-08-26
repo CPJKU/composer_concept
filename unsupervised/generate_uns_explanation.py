@@ -23,7 +23,7 @@ from classifier.tools.resnet import resnet50
 concepts_path = os.path.join(concepts_path, "npy")
 
 
-def prepare_data(gpu_number, target_classes, batch_size, layer, rank):
+def prepare_data(device, target_classes, batch_size, layer, rank):
 
     classes_names = [TARGET_COMPOSERS[i] for i in target_classes]
     title = (
@@ -39,18 +39,14 @@ def prepare_data(gpu_number, target_classes, batch_size, layer, rank):
     else:
         Path(results_root, title).mkdir()
 
-    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-    os.environ["CUDA_VISIBLE_DEVICES"] = gpu_number
-    device = "cuda:0"  ## TODO: import or configure (also used in trainer)
-
     seed = 10
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
     np.random.seed(seed)
     torch.backends.cudnn.deterministic = True
 
-    model_loc = "/share/cp/projects/concept_composers/experiments/kim2020/training/2202180921/model"
-    model_name = "resnet50_valloss_1.277892827987671_acc_0.9258942617369257.pt"
+    model_loc = "classifier/meta/2202180921/model/"
+    model_name = "resnet50.pt"
 
     model = resnet50(in_channels=1, num_classes=13)
     checkpoint = torch.load(os.path.join(model_loc, model_name), map_location=device)
@@ -91,6 +87,7 @@ def train_explainer(
     dimension,
     reducer,
     title,
+    use_cuda
 ):
 
     wm = PytorchModelWrapper(
@@ -100,6 +97,7 @@ def train_explainer(
         input_size=[1, 400, 88],
         input_channel_first=True,
         model_channel_first=True,
+        use_cuda = use_cuda
     )
 
     print("title:{}".format(title))
@@ -142,11 +140,11 @@ def build_explanation(exp, wm, loaders):
 @click.command()
 @click.option("--reducer", help="Either NMF or NTD", default="NMF", type=str)
 @click.option("--max-iter", default=1000, type=int)
-@click.option("--gpu-number", default=0, type=int)
+@click.option("--device", default="cpu", type=str)
 @click.option(
     "--targets",
     help="A list of integers (target classes) as string",
-    default="[9,11]",
+    default="[5,6]",
     type=str,
 )
 @click.option(
@@ -160,14 +158,14 @@ def build_explanation(exp, wm, loaders):
 )
 @click.option("--batch-size", default=10, type=int)
 def start_experiment(
-    reducer, max_iter, gpu_number, targets, dimension, rank, layer, batch_size
+    reducer, max_iter, device, targets, dimension, rank, layer, batch_size
 ):
     # convert targets string to list
     target_classes = json.loads(targets)
     rank = json.loads(rank)
 
     loaders, classes_names, model, title = prepare_data(
-        str(gpu_number), target_classes, batch_size, layer, rank
+        device, target_classes, batch_size, layer, rank
     )
     exp, wm = train_explainer(
         model,
@@ -180,7 +178,8 @@ def start_experiment(
         max_iter,
         dimension,
         reducer,
-        title
+        title,
+        device != "cpu"
     )
     build_explanation(exp, wm, loaders)
 

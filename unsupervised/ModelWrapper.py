@@ -43,6 +43,7 @@ class PytorchModelWrapper(ModelWrapper):
         numpy_out=True,
         input_size=[3, 224, 224],  # model's input size
         batch_size=128,
+        use_cuda =False
     ):  # target: (layer_name,unit_nums)
 
         super().__init__(model, batch_size)
@@ -56,7 +57,7 @@ class PytorchModelWrapper(ModelWrapper):
 
         self.non_negative = False
 
-        self.CUDA = torch.cuda.is_available()
+        self.CUDA = use_cuda
 
     def _to_tensor(self, x):
         if type(x) == np.ndarray:
