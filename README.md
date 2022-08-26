@@ -189,8 +189,9 @@ python -m unsupervised.generate_uns_explanation
 The main parameters to specify are:
 - reducer: a string, either "NTD" (non negative Tucker decomposition) or "NMF" (non negative matrix factorization) 
 - dimension: an integer, either 3 or 4 to select the 3D or 4D Tucker decomposition respectively; this is not used if the reducer is set to NMF
-- rank: a string, either containing an integer (e.g. "5", for NMF), or a list of integers (e.g., "[10, 13, 3, 375]" or "[10, 10, 375]" , one for each NTD dimension)
-- layer: a string, e.g., "layer4" or "layer3". Be sure to not select ranks higher than the original matrix dimension when running NTD, as this is extremely computationally costly
+- rank: a string, either containing an integer (e.g. "5", for NMF), or a list of integers (e.g., "[10, 13, 3, 375]" or "[10, 10, 375]" , one for each NTD dimension). Be sure to not select ranks higher than the original matrix dimension when running NTD, as this is extremely computationally costly
+- layer: a string, e.g., "layer4" or "layer3". 
+- device : a string specifying the name of the device to use for the computation, e.g., cuda, or cpu.
 - targets: a string containing the indices of the two composers to explain; the indices can be retrieve from the following dictionary; for example the explanation between Beethoven and Rachmaninoff will have targets "[9,11]"
 ```
 0 : "Scriabin",
@@ -208,6 +209,10 @@ The main parameters to specify are:
 12 : "Mozart",
 ```
 
+For example, the command
+```
+python -m unsupervised.generate_uns_explanation --reducer "NMF" --targets "[5,6]" --layer "layer4" --rank "3" --device cpu
+```
 
 Other parameters and further parameter information can be visualize with:
 ```
