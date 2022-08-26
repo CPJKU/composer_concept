@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 Before running any code, make sure to adapt all paths necessary in 
 [`config.py`](config.py). Most importantly, make sure to set the path to 
-the MAESTRO dataset and ASAP dataset correctly.
+the [MAESTRO dataset](https://magenta.tensorflow.org/datasets/maestro) and [ASAP dataset](https://github.com/fosfrancesco/asap-dataset.git) correctly. More information on these datasets in the following section.
 
 The data path will contain the preprocessed MIDI files; the results path will contains all results from our scripts;
 the concepts path points to the concepts; and the splits-root
@@ -41,7 +41,7 @@ Allthese paths *need not* but *can* be changed.
 ### Data
 
 The data we use in this work is the MAESTRO v2.0.0 (MIDI only) [3] which you can download 
-[here](https://magenta.tensorflow.org/datasets/maestro). 
+[here](https://magenta.tensorflow.org/datasets/maestro). For the unsupervised part, we use the subset of Maestro contained in the [ASAP dataset](https://github.com/fosfrancesco/asap-dataset.git), because it allows more control on selecting unique versions of pieces.
 
 
 ## Composer Classifier [1] <a name="classifier"></a>
