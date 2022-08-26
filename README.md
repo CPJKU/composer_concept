@@ -213,6 +213,7 @@ For example, the command
 ```
 python -m unsupervised.generate_uns_explanation --reducer "NMF" --targets "[5,6]" --layer "layer4" --rank "3" --device cpu
 ```
+produce 3 concepts for explaining the last layer of the classifier, focusing on Chopin and Bach, with non-negative-matrix factorization.
 
 Other parameters and further parameter information can be visualize with:
 ```
