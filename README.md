@@ -273,7 +273,7 @@ If you use this approach in any research, please cite the relevant paper:
 ```
 @inproceedings{concept_music2022,
   title={Concept-Based Techniques for “Musicologist-friendly” Explanations in a Deep Music Classifier},
-  author={Foscarin, Francesco and Prinz, Katharina and Praher, Verena and Flexer Arthur and Widmer Gerhard},
+  author={Foscarin, Francesco and Hoedt, Katharina and Praher, Verena and Flexer Arthur and Widmer Gerhard},
   booktitle={International Society for Music Information Retrieval Conference {(ISMIR)}},
   year={2022},
 }
