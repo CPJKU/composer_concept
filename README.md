@@ -1,9 +1,10 @@
 # Concept-Based Explanations For Composer Classification
 
-This repository accompanies the publication: Francesco Foscarin*, Katharina Prinz*, 
+This repository accompanies the publication: Francesco Foscarin*, Katharina Hoedt*, 
 Verena Praher*, Arthur Flexer, and Gerhard Widmer, 
 "Concept-Based Techniques for ``Musicologist-friendly'' Explanations in a 
-Deep Music Classifier", (to be) published in Proceedings of the 23rd ISMIR 2022.
+Deep Music Classifier", published in Proceedings of the 23rd ISMIR 2022 
+([pdf](https://archives.ismir.net/ismir2022/paper/000105.pdf)).
 
 (*) equal contribution.
 
