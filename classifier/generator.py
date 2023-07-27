@@ -61,14 +61,13 @@ class Generator:
             for data in data_list:
                 track_comp, orig_name, file_name = data[0], data[1], data[2]
                 # file_name = os.path.join(maestro_root, file_name)
+                file_path = os.path.join(maestro_root, file_name)
                 if track_comp is composer:
                     try:
-                        mid = partitura.load_performance_midi(
-                            os.path.join(maestro_root, data[2])
-                        )
+                        mid = partitura.load_performance_midi(file_path)
                         segment = self.generate_segment(mid)
                     except:
-                        print("ERROR: failed to open {}\t".format(file_name))
+                        print("ERROR: failed to open {}\t".format(file_path))
                     else:
                         # assign uniq id to midi
                         version = self.fetch_version(orig_name)

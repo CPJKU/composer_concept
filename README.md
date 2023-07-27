@@ -93,7 +93,7 @@ of the original repository.
 
 To train a ResNet-50 model with the default parameters for e.g., 10 epochs, run
 ```
-python -m classifier.train_model --mode basetrain --model_name resnet50 --epochs 10
+python -m classifier.train_model --mode basetrain --model_name resnet50 --epochs 10 --onset False
 ```
 
 and adapt the number of epochs as desired. To change the default arguments,
@@ -109,7 +109,7 @@ information on whether the onset is omitted or not, and a path to the data-split
 files, e.g., 
 
 ```
-python -m classifier.compute_performance classifier/meta/2202180921/model/resnet50.pt --omit_onset --split-root classifier/meta
+python -m classifier.compute_performance <modelfile> --omit_onset --split-root classifier/meta
 ```
 
 ## Supervised Explanations <a name="supervised"></a>

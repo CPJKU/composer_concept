@@ -21,6 +21,7 @@ from classifier.tools.resnet import resnet50
 
 
 concepts_path = os.path.join(concepts_path, "npy")
+results_root = os.path.join(results_root, 'unsupervised')
 
 
 def prepare_data(device, target_classes, batch_size, layer, rank):

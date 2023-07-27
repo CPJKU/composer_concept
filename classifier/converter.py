@@ -558,29 +558,10 @@ class Converter:
 
         # Find the composer num, midi num position
         for index, dir in enumerate(split_string_list):
-            # print(index, dir)
-            if "composer" in dir and dir != "concept_composers":
-
-                # temp = list(filter(str.isdigit, dir))
-                # temp_str = ""
-                #
-                # for st in temp:
-                #     temp_str = temp_str + st
-                #
-                # composer_num = int(temp_str)
-
+            if "composer" in dir:
                 composer_num = int(dir.replace("composer", ""))
 
             if "midi" in dir:
-
-                # temp = list(filter(str.isdigit, dir))
-                # temp_str = ""
-                #
-                # for st in temp:
-                #     temp_str = temp_str + st
-                #
-                # midi_num = int(temp_str)
-
                 midi_num = int(dir.replace("midi", ""))
 
         mapping_csv_df = pd.read_csv(

@@ -1,7 +1,7 @@
 """ Adaptation from original repo (https://github.com/KimSSung/Deep-Composer-Classification/blob/master/main.py) """
 
 from classifier.tools.arg_parser import get_config
-from config import data_root
+from config import data_root, project_root
 import os
 
 from classifier.tools.trainer import Trainer
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     assert config.mode in ['basetrain', 'advtrain']
     set_seed(333)
     run_time = date.today().strftime("%y%m%d") + datetime.now().strftime("%H%M")
-    save_dir = os.path.join(data_root, 'training', run_time)
+    save_dir = os.path.join(project_root, 'training', run_time)
     # store configuration
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)

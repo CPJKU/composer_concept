@@ -8,6 +8,9 @@ tqdm
 torchvision
 sklearn
 pandas
-plotly
+plotly==5.6.0
 click
 git+https://github.com/CPJKU/partitura.git@304e9e688554fb762350bb83b7e6f844dfedbd95#egg=partitura
+scikit_image
+tensorly
+pydotplus
